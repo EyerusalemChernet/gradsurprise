@@ -1,0 +1,43 @@
+/* Google Fonts must come before @import "tailwindcss" */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000010;
+  font-family: 'Exo 2', sans-serif;
+  color: white;
+}
+
+/* Scrollable planet content areas */
+.planet-scroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Orbitron for headings */
+.font-space {
+  font-family: 'Orbitron', monospace;
+}
+
+/* Glow effects */
+.glow-text {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+}
+
+.glow-box {
+  box-shadow: 0 0 15px currentColor, 0 0 30px currentColor;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 2px; }
