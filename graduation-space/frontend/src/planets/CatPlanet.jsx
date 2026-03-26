@@ -155,7 +155,7 @@ export default function CatPlanet() {
           )}
         </AnimatePresence>
 
-        <div className="flex flex-wrap justify-center gap-2">
+        <div className="flex flex-wrap justify-center gap-3">
           {[
             { key: 'tuna', label: '🐟 Request Tuna', color: 'bg-blue-600 hover:bg-blue-500' },
             { key: 'salmon', label: '🍣 Request Salmon', color: 'bg-pink-600 hover:bg-pink-500' },
@@ -166,7 +166,7 @@ export default function CatPlanet() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => triggerAction(btn.key)}
-              className={`px-4 py-2 ${btn.color} text-white font-space text-xs rounded-full shadow-lg transition-colors`}
+              className={`px-5 py-3 ${btn.color} text-white font-space text-xs rounded-full shadow-lg transition-colors`}
             >
               {btn.label}
             </motion.button>
@@ -174,10 +174,10 @@ export default function CatPlanet() {
         </div>
       </div>
 
-      {/* AstroJerry */}
-      <div className="absolute bottom-16 right-4 z-10">
+      {/* AstroJerry — top-right on mobile so it never covers bottom buttons */}
+      <div className="absolute top-16 right-3 sm:bottom-16 sm:top-auto sm:right-4 z-10">
         <AstroJerry
-          size={70}
+          size={60}
           message={activeAction === 'feed' ? "That's ME! 😻 Thank you!" : "Welcome to my home planet! 🐱"}
         />
       </div>

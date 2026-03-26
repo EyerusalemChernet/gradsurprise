@@ -20,11 +20,11 @@ const MEMORIES = [
   { id: 8, preview: '⚡ Energy', full: 'When you\'re excited about something, that energy is contagious.' },
 ]
 
-// Deterministic positions for bubbles
+// Deterministic positions — kept away from bottom-right (AstroJerry) and bottom bar
 const POSITIONS = [
-  { x: 10, y: 15 }, { x: 65, y: 10 }, { x: 80, y: 35 },
-  { x: 5, y: 50 }, { x: 55, y: 55 }, { x: 25, y: 70 },
-  { x: 75, y: 70 }, { x: 40, y: 20 },
+  { x: 10, y: 12 }, { x: 60, y: 8 },  { x: 78, y: 30 },
+  { x: 5,  y: 45 }, { x: 50, y: 50 }, { x: 22, y: 62 },
+  { x: 68, y: 58 }, { x: 38, y: 18 },
 ]
 
 export default function MemoryPlanet() {
@@ -144,9 +144,9 @@ export default function MemoryPlanet() {
         )}
       </AnimatePresence>
 
-      {/* AstroJerry */}
-      <div className="absolute bottom-16 right-4 z-10">
-        <AstroJerry size={65} message="These memories are all about you, Dikuse! 💜" />
+      {/* AstroJerry — top-right on mobile so it never covers bottom buttons */}
+      <div className="absolute top-16 right-3 sm:bottom-16 sm:top-auto sm:right-4 z-10">
+        <AstroJerry size={55} message="These memories are all about you, Dikuse! 💜" />
       </div>
 
       {/* Back button */}
